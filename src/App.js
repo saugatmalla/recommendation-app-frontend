@@ -2,9 +2,9 @@ import './App.css';
 
 function App() {
   return (
-   <div>
-     Recommendation App
-   </div> 
+    <div>
+      Recommendation App
+    </div>
   );
 }
 
