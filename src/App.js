@@ -1,10 +1,14 @@
 import './App.css';
+import Homepage from './views/Homepage';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      Recommendation App
-    </div>
+      <Router>
+          <Routes>
+            <Route path="/" exact element={<Homepage/>} />
+          </Routes>
+      </Router>
   );
 }
 
