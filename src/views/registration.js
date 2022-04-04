@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from '../components/header'
 import { Form, Button, Container } from 'react-bootstrap'
 
-
+import api from '../controller/api'
 
 export default function Registration() {
     const [user, setUser] = useState(
@@ -36,9 +36,21 @@ export default function Registration() {
         }
     }
 
-    const handleSubmit =(e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(e,"handleSubmit")
+        const data = {
+            first_name: user.firstName,
+            last_name: user.lastName,
+            email: user.emailId,
+            password: user.password,
+            confirm_password: user.confirmPassword
+        }
+        try {
+            await api.post('/register', data)
+
+        } catch (e) {
+            console.log(e)
+        }
     }
     return (
         <div>
@@ -70,7 +82,7 @@ export default function Registration() {
                             <Form.Control value={user.confirmPassword} onChange={(e) => handleInput(e, "confirmPassword")} type="password" placeholder="Password" />
                         </Form.Group>
 
-                        <Button onSubmit={(e)=>handleSubmit(e)} variant="primary" type="submit" value="submit">
+                        <Button onClick={(e) => handleSubmit(e)} variant="primary" type="submit" value="submit">
                             Submit
                         </Button>
                     </Form>
