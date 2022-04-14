@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Homepage from './views/Homepage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Registration from './views/registration';
