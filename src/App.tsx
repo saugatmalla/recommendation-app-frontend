@@ -11,9 +11,9 @@ function App() {
     <Router>
       <Header></Header>
       <Routes>
-        <Route path="/" exact element={<Homepage />} />
-        <Route path="/registration" exact element={<Registration />} />
-        <Route path="/login" exact element={<Login />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

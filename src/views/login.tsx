@@ -11,10 +11,8 @@ export default function Registration() {
         }
     )
 
-    const handleInput = (e, type) => {
+    const handleInput = (e: any, type: string) => {
         const output = e.target.value
-        setUser({ ...user, firstName: output })
-
         if (type === "email") {
             setUser({ ...user, email: output })
         }
@@ -23,7 +21,7 @@ export default function Registration() {
         }
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
         const data = {
             email: user.email,

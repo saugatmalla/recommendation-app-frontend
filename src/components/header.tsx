@@ -10,7 +10,7 @@ export default function Header() {
         <div>
             <Navbar bg="light" expand="sm">
                 <Container id="nav">
-                    <Nav.Link href="#">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
 
                     {useLocation().pathname === "/login" ?
                         (<Nav.Link as={Link} to="/registration">Register</Nav.Link>) :
